@@ -1,10 +1,20 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700");
-/*
-	Editorial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+
+@font-face {
+  font-family: 'Sofia Pro';
+  src: url('../../fonts/Sofia Pro Regular AZ.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sofia Pro Light';
+  src: url('../../fonts/Sofia Pro Light AZ.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -50,6 +60,15 @@ body {
 
 #center-text{
     text-align: center;
+}
+
+.center-container {
+  text-align: center;
+}
+
+.center-image {
+  display: inline-block;
+  margin: auto;
 }
 
 mark {
@@ -106,7 +125,7 @@ html {
 /* Type */
 body, input, select, textarea {
   color: #7f888f;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Sofia Pro Light", sans-serif;
   font-size: 13pt;
   font-weight: 400;
   line-height: 1.65; }
@@ -144,7 +163,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   color: #3d4449;
-  font-family: "Roboto Slab", serif;
+  font-family: "Sofia Pro", serif;
   font-weight: 700;
   line-height: 1.5;
   margin: 0 0 1em 0; }
@@ -1001,7 +1020,7 @@ section.special, article.special {
   text-align: center; }
 
 header p {
-  font-family: "Roboto Slab", serif;
+  font-family: "Sofia Pro", serif;
   font-size: 1em;
   font-weight: 400;
   letter-spacing: 0.075em;
@@ -1515,7 +1534,7 @@ button,
   color: #6F96D1 !important;
   cursor: pointer;
   display: inline-block;
-  font-family: "Roboto Slab", serif;
+  font-family: "Sofia Pro", serif;
   font-size: 0.8em;
   font-weight: 700;
   height: 3.5em;
@@ -2102,8 +2121,8 @@ button,
   #header .logo {
     border-bottom: 0;
     color: inherit;
-    font-family: "Roboto Slab", serif;
-    font-size: 1.125em; }
+    font-family: "Sofia Pro", serif;
+    font-size: 2.125em; }
   #header .icons {
     text-align: right; }
   @media screen and (max-width: 1680px) {
@@ -2214,7 +2233,7 @@ button,
   -ms-user-select: none;
   user-select: none;
   color: #3d4449;
-  font-family: "Roboto Slab", serif;
+  font-family: "Sofia Pro", serif;
   font-weight: 400;
   letter-spacing: 0.075em;
   list-style: none;

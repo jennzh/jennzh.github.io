@@ -1,30 +1,19 @@
-Editorial by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+<h1 align="left">Hi, I'm Jennifer 👋</h1>
+<p>I'm currently a UCI undergrad majoring in Informatics, specializing in HCI with a passion for software development and UI/UX design. I aim to create meaningful and efficient solutions to real-world problems.</p>
+<p>Welcome to my portfolio. This repository showcases various projects I have worked on, which highlights my work in UI/UX, computer science, app development, and other technical projects.</p>
 
+<h2>My Skills</h2>
+<ul>
+  <li><a href="#"><img src="https://img.icons8.com/color/24/000000/python.png" alt="Python"/> Python</a></li>
+  <li><a href="#"><img src="https://img.icons8.com/color/24/000000/c-plus-plus-logo.png" alt="C++"/> C++</a></li>
+  <li><a href="#"><img src="https://img.icons8.com/color/24/000000/html-5.png" alt="HTML 5"/> HTML 5</a></li>
+  <li><a href="#"><img src="https://img.icons8.com/color/24/000000/git.png" alt="Git"/> Git</a></li>
+</ul>
 
-Say hello to Editorial, a blog/magazine-ish template built around a toggleable "locking"
-sidebar (scroll down to see what I mean) and an accordion-style menu. Not the usual landing
-page/portfolio affair you'd expect to see at HTML5 UP, but I figured for my 41st (!!!)
-template I'd change it up a little. Enjoy :)
-
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
-
-(* = not included)
-
-AJ
-aj@lkn.io | @ajlkn
-
-
-Credits:
-
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fontawesome.io)
-
-	Other:
-		jQuery (jquery.com)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+<!-- Get In Touch -->
+<h2>Get In Touch</h2>
+<div>
+  <a href="https://linkedin.com/in/jennifer-zhang-0a31ba272/" style="display:inline-block; margin-right:20px;">
+    <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn"/>
+  </a>
+</div>
