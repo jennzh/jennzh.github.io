@@ -8,13 +8,6 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Sofia Pro Light';
-  src: url('../../fonts/Sofia Pro Light AZ.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -55,10 +48,13 @@ table {
   border-spacing: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   -webkit-text-size-adjust: none; }
 
-#center-text{
+#center-text {
     text-align: center;
 }
 
@@ -103,14 +99,21 @@ html {
   box-sizing: inherit; }
 
   body {
-    background-image: url("../../images/bog-img.png");
     background-color: #F7F2EC;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
   
-
+#banner {
+  display: flex; /* Use flexbox to center the content */
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  min-height: 100vh; /* Make the banner take at least 100% of the viewport height */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
   body.is-preload *, body.is-preload *:before, body.is-preload *:after, body.is-resizing *, body.is-resizing *:before, body.is-resizing *:after {
     -moz-animation: none !important;
@@ -124,8 +127,8 @@ html {
 
 /* Type */
 body, input, select, textarea {
-  color: #7f888f;
-  font-family: "Sofia Pro Light", sans-serif;
+  color: #808f7f;
+  font-family: "Sofia Pro", sans-serif;
   font-size: 13pt;
   font-weight: 400;
   line-height: 1.65; }
@@ -144,10 +147,10 @@ a {
   -webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-  color: #6F96D1;
+  color: #BAD6EB;
   text-decoration: none; }
   a:hover {
-    color: #BAD6EB !important; }
+    color: #6F96D1 !important; }
     a:hover strong {
       color: inherit; }
 
@@ -242,6 +245,7 @@ pre {
     line-height: 1.75;
     padding: 1em 1.5em;
     overflow-x: auto; }
+
 
 hr {
   border: 0;
@@ -1174,7 +1178,7 @@ input[type="radio"] {
     content: '\f00c'; }
   input[type="checkbox"]:focus + label:before,
   input[type="radio"]:focus + label:before {
-    border-color: #f56a6a;
+    border-color: #6F96D1;
     box-shadow: 0 0 0 1px #f56a6a; }
 
 input[type="checkbox"] + label:before {
@@ -1456,7 +1460,7 @@ ul.pagination {
       padding: 0 0.5em;
       text-align: center; }
       ul.pagination li > .page.active {
-        background-color: #f56a6a;
+        background-color: #ca2626;
         color: #ffffff !important; }
         ul.pagination li > .page.active:hover {
           background-color: #f67878; }
@@ -1602,7 +1606,7 @@ button,
     input[type="button"].primary:active,
     button.primary:active,
     .button.primary:active {
-      background-color: #f45c5c; }
+      background-color: #c1ff23; }
   input[type="submit"].disabled, input[type="submit"]:disabled,
   input[type="reset"].disabled,
   input[type="reset"]:disabled,
@@ -1677,7 +1681,7 @@ button,
       text-align: center;
       width: 10em; }
       .features article .icon:before {
-        color: #f56a6a;
+        color: #6F96D1;
         font-size: 2.75rem;
         position: relative;
         top: 0.05em; }
@@ -1915,40 +1919,6 @@ button,
         padding: 3em 0 1em 0 ; } }
 
 /* Sidebar */
-#search form {
-  text-decoration: none;
-  position: relative; }
-  #search form:before {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    line-height: 1;
-    text-transform: none !important;
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900; }
-  #search form:before {
-    -moz-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    -ms-transform: scaleX(-1);
-    transform: scaleX(-1);
-    color: #7f888f;
-    content: '\f002';
-    cursor: default;
-    display: block;
-    font-size: 1.5em;
-    height: 2em;
-    line-height: 2em;
-    opacity: 0.325;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    top: 0;
-    width: 2em; }
-  #search form input[type="text"] {
-    padding-right: 2.75em; }
 
 #sidebar {
   -moz-flex-grow: 0;
@@ -1963,7 +1933,7 @@ button,
   -webkit-transition: margin-left 0.5s ease, box-shadow 0.5s ease;
   -ms-transition: margin-left 0.5s ease, box-shadow 0.5s ease;
   transition: margin-left 0.5s ease, box-shadow 0.5s ease;
-  background-color: #f5f6f7;
+  background-color: #F7F2EC;
   font-size: 0.9em;
   position: relative;
   width: 26em; }

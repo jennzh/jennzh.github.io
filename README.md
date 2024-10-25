@@ -5,10 +5,9 @@
 <h2> Technologies Used</h2>
 <ul>
   <li><a href="#"><img src="https://img.icons8.com/color/24/000000/html-5.png" alt="HTML 5"/> HTML 5</a></li>
-  <li><a href="#"><img src=" https://icons8.com/icon/1045/css" alt="CSS"/> CSS</a></li>
+  <li><a href="#"><img src="https://img.icons8.com/color/24/000000/css.png" alt="CSS"/> CSS</a></li>
   <li><a href="#"><img src="https://img.icons8.com/color/24/000000/git.png" alt="Git"/> Git</a></li>
-  <li><a href="#"><img src="https://icons8.com/icon/AZOZNnY73haj/github" alt="GitHub"/> GitHub</a></li>
-  
+  <li><a href="#"><img src="https://img.icons8.com/color/24/000000/github.png" alt="GitHub"/> GitHub</a></li>
 </ul>
 
 <!-- Get In Touch -->
