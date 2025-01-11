@@ -11,6 +11,11 @@
     background-image: linear-gradient(to bottom right, #F2C0B8, #404AE3);
 }
 
+#proj02-wrapper {
+    padding: 1em;
+    background-color: #DCCBC2;
+}
+
 .wrapper {
     background-color: #F7F2EC;
     padding: 2em;
@@ -19,6 +24,111 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     border-radius: 10px; 
 }
+
+.content-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+
+.left-section {
+    flex: 1;
+    text-align: left;
+}
+
+.left-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.right-section {
+    flex: 1;
+    text-align: center;
+}
+
+.right-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for Info Section */
+.info-section {
+    padding: 2em;
+    background-color: #f7f2ec;
+}
+
+.info-section h2 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.info-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-section table th,
+.info-section table td {
+    padding: 1em;
+    text-align: left;
+}
+
+.info-section table th {
+    background-color: #ddd;
+    font-weight: bold;
+}
+
+
+/* photo Section */
+.photo-section {
+    padding: 2em;
+    text-align: center;
+}
+
+.photo-section h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #3d4449;
+}
+
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5em; /* Spacing between images */
+}
+
+.photo-gallery figure {
+    flex: 1 1 calc(50% - 1em); /* 4 columns */
+    max-width: 50%; /* Each image takes up 25% width */
+    margin: 0;
+    text-align: center;
+}
+
+.photo-gallery img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures the image fills the container while maintaining aspect ratio */
+    border-radius: 10px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    
+}
+
+.photo-gallery img:hover {
+    transform: scale(2); /* Slight zoom effect on hover */
+}
+
+.photo-gallery figcaption {
+    margin-top: 0.5em;
+    font-size: 0.9em;
+    color: #666;
+}
+
 
 .iframe-wrapper {
     display: flex;
@@ -149,9 +259,9 @@ h5 {
 }
 
 .proj-section .image img.proj-image {
-    width: 100% !important;
-    height: auto !important;
-    display: block !important;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Wrapper for both slideshows */
@@ -237,3 +347,59 @@ h5 {
   .proj-image[src*="p01img41.png"]:hover {
     transform: scale(2); 
   }
+
+  /* Results Section */
+.results-section {
+    text-align: center;
+    padding: 2em;
+    background-color: #f8f5f1;
+}
+
+.results-section h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.results-section p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 2em;
+}
+
+.results-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+}
+
+.metric {
+    flex: 1 1 calc(25% - 1em); /* Four columns, responsive */
+    text-align: center;
+    max-width: 200px; /* Optional: Limit the size of each metric */
+}
+
+.metric .percentage {
+    font-size: 3em;
+    font-weight: bold;
+    color: #3d4449;
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.metric p {
+    font-size: 1em;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .metric {
+        flex: 1 1 calc(50% - 1em); /* Two columns on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .metric {
+        flex: 1 1 100%; /* Full width on small screens */
+    }
+}
