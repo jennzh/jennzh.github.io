@@ -95,6 +95,15 @@ body {
 html {
   box-sizing: border-box; }
 
+.profile-picture img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Fallback for older browsers */
+    clip-path: circle(48% at 50% 50%);
+    object-fit: cover;
+}
+
+
 *, *:before, *:after {
   box-sizing: inherit; }
 
