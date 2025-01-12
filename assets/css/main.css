@@ -113,6 +113,40 @@ html {
     background-repeat: no-repeat;
     background-position: center;
 }
+
+/* Style for the job header (title and year) */
+.job-header {
+  display: flex; /* Place title and date on the same line */
+  align-items: center; /* Align items vertically */
+  gap: 10px; /* Add a small space between the title and date */
+}
+
+.job-title {
+  font-size: 1.2em; /* Slightly larger for the job title */
+  font-weight: bold; /* Bold the title */
+  margin: 0; /* Remove any extra margins */
+}
+
+.job-date {
+  font-size: 0.9em; /* Make the year smaller */
+  color: #666; /* Subtle gray color */
+  margin: 0; /* Remove any default margins */
+}
+
+/* Style for the job description */
+.job-description {
+  margin-top: 0.5em; /* Slight space after title/year */
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+  line-height: 1.6; /* Improve readability */
+}
+
+.job-description li {
+  margin-bottom: 0.5em; /* Add slight space between each point */
+  text-indent: -1.2em; /* Indent bullet points slightly for alignment */
+  padding-left: 1.2em; /* Align text consistently */
+}
+
   
 #banner {
   display: flex; /* Use flexbox to center the content */
