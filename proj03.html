@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>IMDB Reviews</title>
+	<link rel="icon" type="image/x-icon" href="../images/jz.png">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css"/>
+	<link rel="stylesheet" href="assets/css/projs.css"/>
+</head>
+<body class = "is-preload">
+	<!-- Wrapper -->
+	 <div id="proj03-wrapper">
+		<!-- Main -->
+		 <div id="main">
+			<div class="inner">
+				<!-- Header -->
+				 <header id="header">
+					<a href="index.html" class="logo"><strong>JZ.</strong></a>
+					<ul class="icons">
+						<li><a href="index.html" class="actions">main page</a></li>
+						<li><a href="projects.html">projects</a></li>
+						<li><a href="about.html">about me</a></li>
+						<li><a href="exp.html">experience</a></li>
+					</ul>
+				 </header>
+				 
+
+
+				 <!-- Content -->
+				  <section id="main" class="wrapper">
+					<div class="inner" id="two">
+							<h1 id="center-text" >IMDB Reviews</h1>
+						<div class="button-container">
+							<ul class="actions">
+								<a href="" class="glow-on-hover button">View GitHub</a>
+							</ul>
+						</div> <!-- button-container -->
+						
+						<h3 id="center-text">Project Objective:</h3>
+						<p>The goal of this project is to classify IMDB movie reviews as either positive or negative based on the text content. The dataset contains 50,000 labeled reviews, evenly split between training and testing sets. The task uses natural language processing to extract features and machine learning to predict sentiments. </p>
+
+						<!-- Dataset Analysis -->
+						 <section>
+							<h3 id="center-text">Dataset Analysis:</h3>
+							<p>There are 25,000 data points in our training dataset. Each review is formatted with the id and actual rating, and within each text file is the word contents of the review. Each positive and negative review makes up half of the dataset (12,500 data points). The data is primarily skewed left, so it would make sense to use the median rather than the mean to describe the distribution of words per review.</p>
+								<div class="proj-section">
+									<figure>
+										<figcaption id="center-text">Figure 1 - Label Distribution</figcaption>
+										<a class="image"><img src="images/proj03/p03img01.png" alt="" class="proj-image" /></a>
+									</figure>
+									<figure>
+										<figcaption id="center-text">Figure 2 - Review Length Distribution</figcaption>
+										<a class="image"><img src="images/proj03/p03img02.png" alt="" class="proj-image" /></a>
+									</figure>
+								</div> <!-- proj-section -->
+								
+								<p>Reviews ranged from 100 to 300 words in length, with both positive and negative labels displaying similar length distributions. Common words in positive reviews include terms like "great," "amazing," and "loved," while negative reviews frequently use words such as "bad," "worst," and "boring." To prepare the data for analysis, we removed HTML tags, punctuation, and special characters. The text was then converted to lowercase to keep everything consistent. We also broke the reviews into individual words and cleaned up stopwords. In addition, to handle varying review lengths and styles, we used SBERT embeddings to convert the text into dense numerical vectors.</p>
+						 </section> <!-- dataset analysis-->
+
+						 <!-- Design Choices / Models -->
+						  <section>
+							<h3 id="center-text">Design Choices / Models:</h3> 
+							
+							<!-- Vocabulary-Based MLP -->
+							<h4 id="center-text">Vocabulary-Based MLP</h4>
+							<p>The Vocabulary-Based MLP was trained using reviews transformed into integer sequences through TensorFlow's TextVectorization. The model used a single hidden layer with 64 neurons and ReLU activation. The training was performed with the Adam optimizer, a learning rate of 0.001, and binary cross-entropy loss.</p>
+							<div class="proj-section center-container">					
+								<a class="image"><img src="images/proj03/p03img03.png" style="max-width:50%;" alt="" class="proj-image center-image" /></a>
+							</div> <!-- proj-section / center container-->
+							<p> <br>Despite these configurations, the model struggled to learn due to the equal treatment of padded elements, achieving only <strong>50%</strong> test accuracy and a cross-validation score of <strong>51%</strong>.</p>
+							<!-- vocabulary-based mlp -->
+							
+							<!-- SBERT with MLP -->
+							<h4 id="center-text">SBERT with MLP</h4>
+							<p>Reviews were encoded into dense, fixed-length embeddings using SBERT (all-MiniLM-L6-v2). The MLP architecture consisted of three layers (256, 128, and 64 neurons) with ReLU activation functions. The Adam optimizer with a learning rate of 0.0001 and a batch size of 256 was used. Early stopping was applied to avoid overfitting. The training focused on optimizing the binary cross-entropy loss, and hyperparameters were refined through grid search.</p>
+							<div class="proj-section center-container">					
+								<a class="image"><img src="images/proj03/p03img04.png" style="max-width:50%;" alt="" class="proj-image center-image" /></a>
+							</div> <!-- proj-section / center container-->
+							<p> <br>The model achieved a cross-validation accuracy of <strong>49%</strong>, with improved test accuracy at <strong>82.10%</strong>.</p>
+							<!-- sbert with mlp -->
+
+							<!-- Keras Sequential Model -->
+							<h4 id="center-text">Keras Sequential Model</h4>
+							<p>This model was designed with SBERT embeddings as input. The architecture includes three layers: 256 neurons, 128 neurons, and a final single neuron for binary classification. Dropout layers with rates of 0.3 and 0.2 were added for regularization. The Adam optimizer was employed with a learning rate of 0.001, and binary cross-entropy was used as the loss function. The training involved 20 epochs with a batch size of 16, and hyperparameters such as dropout rates and learning rates were tuned using grid search.</p>
+							<p> The model achieved a cross-validation accuracy of <strong>81.65%</strong> and a test accuracy of <strong>82.54%</strong>.</p>
+							<!-- keras sequential model -->
+
+							<!-- Random Forest -->
+							<h4 id="center-text">Random Forest</h4>
+							<p>This ensemble combined SBERT embeddings with a Random Forest classifier. The model used 100 estimators and default hyperparameters for tree depth and splitting criteria. The training was performed on the entire dataset of SBERT embeddings, and the ensemble was evaluated using cross-validation and test accuracy metrics.</p>
+							<p> The model achieved <strong>83.16%</strong> test accuracy, but it significantly overfitted the training data with an accuracy of <strong>99%</strong>.</p>
+							<!-- random forest -->
+
+							<!-- Gradient Boosting -->
+							<h4 id="center-text">Gradient Boosting</h4>
+							<p>Gradient Boosting was implemented using XGBoost, combined with SBERT embeddings and the optimized Keras Sequential model. The XGBoost parameters included 100 estimators, a learning rate of 0.1, and a maximum tree depth of 3.</p>
+							<p>The ensemble achieved <strong>83.44%</strong> test accuracy and performed similarly to the Random Forest ensemble in terms of overfitting, with a training accuracy of <strong>99%</strong>.</p>
+							<!-- gradient boosting -->
+						</section> <!-- design choices / models -->
+
+						<!-- Challenges -->
+						<section>
+							<h3 id="center-text">Challenges:</h3>
+							<p>Initially, the MLPClassifier demonstrated poor performance with a cross-validation score of approximately 50%, highlighting the need for significant improvements in feature representation. Transitioning to SBERT embeddings greatly improved the model's ability to capture textual semantics. The Keras Sequential model, with dense layers and dropout regularization, was better suited for text data and effectively reduced overfitting. To address underfitting and overfitting, we tested various architectures, including RNNs, but they performed worse than SBERT-based models. We also considered introducing feature transformations, such as limiting the maximum number of words per review to reduce noise. Filtering out irrelevant words was another potential improvement not fully explored but identified as a priority for future work.</p>
+						</section> <!-- challenges -->
+
+						<!-- Performance Validation -->
+						<section>
+							<h3 id="center-text">Performance Validation:</h3>
+							<div class="proj-section center-container">					
+								<a class="image"><img src="images/proj03/p03img05.png" style="max-width:80%;" alt="" class="proj-image center-image" /></a>
+							</div> <!-- proj-section / center container-->
+							<p><br>Comparing our CV and Training/Validation accuracy, we would deem the SBERT with Keras Sequential model most suitable based on overfitting/underfitting tradeoffs. </p>
+						</section> <!-- performance validation -->
+
+						<!-- Conclusion -->
+						<section>
+							<h3 id="center-text">Conclusion:</h3>
+							<p>In this project, we explored the analysis of IMDB movie reviews utilizing techniques like SBERT embeddings and neural network models. This dataset posed challenges related to text variability and overfitting, which were addressed through feature engineering and model design. SBERT embeddings significantly improved model performance by providing a semantic understanding of the reviews, while ensemble models achieved higher test accuracies at the cost of overfitting.  In the future, exploring semi-supervised methods, like label propagation, could also improve results by leveraging both labeled and unlabeled data. Additionally, incorporating other techniques, such as limiting review lengths to the median number of words and filtering irrelevant terms, may enhance model performance. By observing how techniques work and how to make them work better, refining feature engineering and regularization methods can enhance model generalization. </p>
+						</section> <!-- conclusion -->
+					
+					<div class="button-container">
+						<ul class="actions">
+							<a href="#two" class="glow-on-hover button">Go Back to Top</a>
+						</ul>
+					</div> <!-- button-container -->
+
+				  </section> <!-- main / wrapper -->
+			</div> <!--inner-->
+		 </div> <!-- main -->
+
+		 <!-- Sidebar -->
+		  <div id="sidebar">
+			<div class="inner">
+				<!-- Menu -->
+				 <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header> <!-- major -->
+					<ul>
+						<li><a href="index.html">Main Page</a></li>
+						<li>
+							<span class="opener">Projects</span>
+							<ul>
+								<li><a href="proj01.html">Sleep Tracking App</a></li>
+								<li><a href="proj02.html">VOJO Silk</a></li>
+								<li><a href="proj03.html">IMDB Reviews</a></li>
+								<li><a href="">Flying Avocado</a></li>
+							</ul>
+						</li>
+						<li><a href="about.html">About Me</a></li>
+						<li><a href="exp.html">Experience</a></li>
+					</ul>
+				 </nav> <!-- menu -->
+
+				 <section>
+					<header class="major">
+						<h2>Let's get in touch!</h2>
+					</header>
+					<ul class="contact">
+						<li class="icon solid fa-envelope"><a href="#">jennz12@uci.edu</a></li>
+						<li class="icon solid fa-home">Irvine, CA</li>
+					</ul>
+				 </section>
+
+				 <!-- Footer -->
+				 <footer id="footer">
+					<p class="copyright">&copy; Jennifer Zhang</p>
+				</footer>
+			</div> <!-- inner -->
+		  </div> <!-- sidebar -->
+	 </div> <!-- proj03-wrapper -->
+
+	 <!-- Scripts -->
+	 <script src="assets/js/jquery.min.js"></script>
+	 <script src="assets/js/browser.min.js"></script>
+	 <script src="assets/js/breakpoints.min.js"></script>
+	 <script src="assets/js/util.js"></script>
+	 <script src="assets/js/main.js"></script>
+	 <script src="assets/js/slideshow.js" defer></script>
+</body>
+</html>
