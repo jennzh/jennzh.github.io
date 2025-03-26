@@ -47,11 +47,11 @@
 								<div class="proj-section">
 									<figure>
 										<figcaption id="center-text">Figure 1 - Label Distribution</figcaption>
-										<a class="image"><img src="images/proj03/p03img01.png" alt="" class="proj-image" /></a>
+										<a class="image"><img src="/assets/images/proj03/p03img01.png" alt="" class="proj-image" /></a>
 									</figure>
 									<figure>
 										<figcaption id="center-text">Figure 2 - Review Length Distribution</figcaption>
-										<a class="image"><img src="images/proj03/p03img02.png" alt="" class="proj-image" /></a>
+										<a class="image"><img src="/assets/images/proj03/p03img02.png" alt="" class="proj-image" /></a>
 									</figure>
 								</div> <!-- proj-section -->
 								
@@ -66,7 +66,7 @@
 							<h4 id="center-text">Vocabulary-Based MLP</h4>
 							<p>The Vocabulary-Based MLP was trained using reviews transformed into integer sequences through TensorFlow's TextVectorization. The model used a single hidden layer with 64 neurons and ReLU activation. The training was performed with the Adam optimizer, a learning rate of 0.001, and binary cross-entropy loss.</p>
 							<div class="proj-section center-container">					
-								<a class="image"><img src="images/proj03/p03img03.png" style="max-width:50%;" alt="" class="proj-image center-image" /></a>
+								<a class="image"><img src="/assets/images/proj03/p03img03.png" style="max-width:50%;" alt="" class="proj-image center-image" /></a>
 							</div> <!-- proj-section / center container-->
 							<p> <br>Despite these configurations, the model struggled to learn due to the equal treatment of padded elements, achieving only <strong>50%</strong> test accuracy and a cross-validation score of <strong>51%</strong>.</p>
 							<!-- vocabulary-based mlp -->
@@ -75,7 +75,7 @@
 							<h4 id="center-text">SBERT with MLP</h4>
 							<p>Reviews were encoded into dense, fixed-length embeddings using SBERT (all-MiniLM-L6-v2). The MLP architecture consisted of three layers (256, 128, and 64 neurons) with ReLU activation functions. The Adam optimizer with a learning rate of 0.0001 and a batch size of 256 was used. Early stopping was applied to avoid overfitting. The training focused on optimizing the binary cross-entropy loss, and hyperparameters were refined through grid search.</p>
 							<div class="proj-section center-container">					
-								<a class="image"><img src="images/proj03/p03img04.png" style="max-width:50%;" alt="" class="proj-image center-image" /></a>
+								<a class="image"><img src="/assets/images/proj03/p03img04.png" style="max-width:50%;" alt="" class="proj-image center-image" /></a>
 							</div> <!-- proj-section / center container-->
 							<p> <br>The model achieved a cross-validation accuracy of <strong>49%</strong>, with improved test accuracy at <strong>82.10%</strong>.</p>
 							<!-- sbert with mlp -->
@@ -109,7 +109,7 @@
 						<section>
 							<h3 id="center-text">Performance Validation:</h3>
 							<div class="proj-section center-container">					
-								<a class="image"><img src="images/proj03/p03img05.png" style="max-width:80%;" alt="" class="proj-image center-image" /></a>
+								<a class="image"><img src="/assets/images/proj03/p03img05.png" style="max-width:80%;" alt="" class="proj-image center-image" /></a>
 							</div> <!-- proj-section / center container-->
 							<p><br>Comparing our CV and Training/Validation accuracy, we would deem the SBERT with Keras Sequential model most suitable based on overfitting/underfitting tradeoffs. </p>
 						</section> <!-- performance validation -->
