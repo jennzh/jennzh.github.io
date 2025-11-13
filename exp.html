@@ -1,11 +1,32 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>experience</title>
-    <link rel="icon" type="image/x-icon" href="/assets/images/jz.png">
+    <title>Resume - Jennifer Zhang</title>
+    <link rel="icon" type="image/png" href="/assets/images/main/icon.png">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css"/>
+    <style>
+        .resume-container {
+            width: 100%;
+            height: 90vh;
+            margin: 20px 0;
+        }
+        .resume-embed {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .resume-fallback {
+            text-align: center;
+            padding: 40px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 
 <body class="is-preload experience-page">
@@ -20,90 +41,35 @@
                     <nav id="nav">
                         <ul>
                             <li><a href="index.html">main page</a></li>
-                            <li><a href="projects.html">projects</a></li>
-                            <li><a href="exp.html">experience</a></li>
+                            <li><a href="exp.html">resume</a></li>
                             <li><a href="about.html">about me</a></li>
                         </ul>
                     </nav>
                 </header>
 				<div id = "experience-div">
-					<!-- Experience Section -->
+					<!-- Resume Section -->
 					<section class="experience">
-						<h2>experience</h2>
+						<h2>resume</h2>
 						
-						<div class="experience-entry">
-							<h3>Amazon, <strong>Cloud Support Associate Intern</strong></h3>
-							<p>Starting June 2025 | Seattle, WA</p>
-						</div>
-						
-						<hr>
-	
-						<div class="experience-entry">
-							<h3>NASA, <strong>Game Developer</strong>, <em>capstone project</em><span class="experience-toggle"><i class="fas fa-chevron-down"></i></span></h3>
-							<p>Jan 2025 – Present | Irvine, CA</p>
-							<div class="experience-content">
-								<ul>
-									<li>Proactively coordinate with NASA Psyche partner to integrate accurate scientific data into game features and narrative elements.</li>
-									<li>Lead the development and implementation of core gameplay systems using Unity C#, including player controls, in-game UI elements, and interactive features.</li>
-									<li>Conduct iterative usability testing, refining interfaces based on user feedback.</li>
-									<li>Collaborating with a team of six to design and develop an educational Unity-based game aimed at teaching players about the NASA Psyche mission while providing an engaging and entertaining experience.</li>
-								</ul>
-							</div>
+						<!-- PDF Embed -->
+						<div class="resume-container">
+							<iframe src="/assets/resume/JenniferZhang_Resume.pdf" class="resume-embed" type="application/pdf">
+								<div class="resume-fallback">
+									<h3>Resume Preview Not Available</h3>
+									<p>Your browser doesn't support PDF viewing.</p>
+									<a href="/assets/resume/Jennifer_Zhang_Resume.pdf" target="_blank" class="button">Download Resume PDF</a>
+								</div>
+							</iframe>
 						</div>
 						
-						<hr>
+						<!-- Alternative: Google Drive embed (uncomment and replace with your Google Drive link) -->
+						<!--
+						<div class="resume-container">
+							<iframe src="https://drive.google.com/file/d/YOUR_FILE_ID/preview" class="resume-embed"></iframe>
+						</div>
+						-->
 						
-						<div class="experience-entry">
-							<h3>Young Scholars Institute, <strong>Administrative Assistant</strong><span class="experience-toggle"><i class="fas fa-chevron-down"></i></span></h3>
-							<p>June 2019 – Present | San Marino, CA</p>
-							<div class="experience-content">
-								<ul>
-									<li>Digitized records and implemented effective solutions to streamline data management and improve office workflows.</li>
-									<li>Installed and configured software and hardware on office computers, ensuring proper system integrations and troubleshooting issues.</li>
-									<li>Led digital experience enhancements, creating interactive registration pages and user-friendly event portals.</li>
-									<li>Acted as the primary receptionist, handling inquiries and providing seamless communication with parents and students.</li>
-								</ul>
-							</div>
-						</div>
-	
-						<hr>
-						
-						<div class="experience-entry">
-							<h3>VOJO Silk, <strong>UI/UX Designer</strong><span class="experience-toggle"><i class="fas fa-chevron-down"></i></span></h3>
-							<p>June 2024 – Oct 2024 | Los Angeles, CA</p>
-							<div class="experience-content">
-								<ul>
-									<li>Redesigned the website's structure and user flow, resolving navigation challenges and improving product organization, resulting in reduced bounce rates and increased conversions.</li>
-									<li>Led usability testing to refine the interface and address user pain points, ensuring an optimized e-commerce experience.</li>
-									<li>Developed wireframes and high-fidelity designs, incorporating user feedback to create an intuitive and visually appealing shopping experience.</li>
-									<li>Implemented interactive features and optimized site performance, resulting in a 60% increase in conversion rates and 21% improvement in returning customer rate.</li>
-								</ul>
-							</div>
-						</div>
-	
-						<hr>
-					</section> <!-- end of experience section-->
-
-					<!-- Skills Section -->
-					<section class="skills">
-						<h2>technical skills</h2>
-						<div class="skill-category">
-							<h3>Programming Languages</h3>
-							<p>C#, C++, JavaScript, Java, HTML/CSS, Python, Bash</p>
-						</div>
-						<div class="skill-category">
-							<h3>Tools & Framework</h3>
-							<p>Unity, Blender, Visual Studio, Figma, Git, Jira, SQL, Microsoft Office, Adobe Photoshop, Adobe InDesign, Slack</p>
-						</div>
-						<div class="skill-category">
-							<h3>Relevant Coursework</h3>
-							<p>Project Management, Machine Learning, Data Structures & Algorithms, HCI, Computer-Supported Cooperative Work</p>
-						</div>
-						<div class="skill-category">
-							<h3>Languages</h3>
-							<p>English (Native), Chinese Mandarin (Native)</p>
-						</div>
-					</section> <!-- end of skills section -->
+					</section> <!-- end of resume section-->
 				</div> <!-- end of experience div -->
             </div> <!-- end of inner div -->
         </div> <!-- end of main div -->
@@ -114,17 +80,7 @@
 					<nav id="menu">
 						<ul>
 							<li><a href="index.html">main page</a></li>
-							<li>
-								<a href="projects.html">projects</a>
-								<ul>
-									<li>↳ <a href="nasa-psyche.html">nasa psyche web app</a></li>
-									<li>↳ <a href="imdb-dataset.html">dataset exploration</a></li>
-									<li>↳ <a href="#">this portfolio</a></li>
-									<li>↳ <a href="vojo-silk.html">vojo silk</a></li>
-									<li>↳ <a href="oof-sleep-tracker.html">oof sleep tracker app</a></li>
-								</ul>
-							</li>
-							<li><a href="exp.html">experience</a></li>
+							<li><a href="exp.html">resume</a></li>
 							<li><a href="about.html">about me</a></li>
 						</ul>
 						<div class="menu-footer">

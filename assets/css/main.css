@@ -79,7 +79,7 @@ html {
 }
 
 body {
-  background-color: #F7F2EC;
+  background-color: #FFFAF4;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -212,24 +212,19 @@ sup {
   text-align: right; }
 
 /* IMAGE */
-a.image {
+.project-card .image {
   display: block;
   width: 100%;
   height: 200px;
   overflow: hidden;
-  border-radius: 5px;
+  margin: 0;
 }
 
-a.image img {
+.project-card .image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
   display: block;
-  transition: transform 0.2s ease;
-}
-
-a.image:hover img {
-  transform: scale(1.05);
 }
 
 
@@ -463,12 +458,18 @@ ul {
   max-width: 50%;
 }
 
+.profile-picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
 .profile-picture img {
-  width: 175px; 
-  height: 175px;
+  width: 250px; 
+  height: 250px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 10rem; 
 }
 
 .icons {
@@ -504,63 +505,79 @@ ul {
 .social-icons img {
     width: 40px;
     height: 40px;
-    object-fit: contain; 
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
 }
 
 /* MAIN PAGE - PROJ SECTION */
 .project-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; 
-  align-items: flex-start;
-  text-align: left;
-  border: 2px solid #D4C4B7;
-  border-radius: 10px;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  height: 100%; 
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .project-card h3 {
-  margin-bottom: 8px;
+  margin: 16px 20px 8px 20px;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #333;
 }
 
 .project-card p {
-  min-height: 80px;
+  margin: 0 20px 16px 20px;
+  color: #666;
+  font-size: 0.9em;
+  line-height: 1.4;
+  flex-grow: 1;
 }
 
 .project-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
   justify-content: center;
-  align-items: stretch; 
+  align-items: stretch;
 }
 
 .project-buttons {
   display: flex;
-  justify-content: center; 
-  align-items: center; 
-  gap: 10px;
-  margin-top: 10px;
-  width: 100%; 
-  text-align: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 20px 20px 20px;
+  margin-top: auto;
 }
 
 .project-buttons a {
-  padding: 8px 20px;
-  font-size: 12px;
-  border: 2px solid #D4C4B7;
-  border-radius: 30px;
+  padding: 8px 16px;
+  font-size: 0.85em;
+  border: 1px solid #ddd;
+  border-radius: 6px;
   text-decoration: none;
-  color: #000;
-  font-weight: bold;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  color: #555;
+  background: #FFFAF4;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  text-align: center;
 }
 
 .project-buttons a:hover {
-  background-color: #EEEAF3;
-  color: #FFF;
+  background: #e9ecef;
+  border-color: #adb5bd;
+  color: #333;
 }
 
 .projects-header {
@@ -608,6 +625,7 @@ ul {
   border-radius: 10px;
   margin-bottom: 15px;
   border: 1px solid #D4C4B7;
+  background: white;
 }
 
 .highlight {
@@ -659,10 +677,7 @@ ul {
   justify-content: space-between;
 }
 
-.avatar img {
-  width: 150px; 
-  height: auto;
-}
+
 
 .about-text {
   width: 60%;
@@ -687,9 +702,7 @@ ul {
       text-align: center;
   }
 
-  .avatar img {
-      margin-bottom: 20px;
-  }
+
 
   .about-text {
       width: 90%;
@@ -732,6 +745,11 @@ ul {
 .contact-item img {
   width: 32px; 
   height: auto;
+  transition: transform 0.3s ease;
+}
+
+.contact-item img:hover {
+  transform: scale(1.2);
 }
 
 .back-to-top {
@@ -753,9 +771,8 @@ ul {
       padding: 4rem 6rem;
   }
   .profile-picture img {
-      width: 175px;
-      height: 175px;
-      margin-right: 6rem;
+      width: 220px;
+      height: 220px;
   }
 }
 
@@ -784,8 +801,8 @@ ul {
       padding: 1rem 2rem;
   }
   .profile-picture img {
-      width: 100px;
-      height: 100px;
+      width: 150px;
+      height: 150px;
   }
   .social-icons {
       flex-direction: column;
@@ -801,8 +818,8 @@ ul {
       padding: 2rem 1rem;
   }
   .profile-picture img {
-      width: 80px;
-      height: 80px;
+      width: 120px;
+      height: 120px;
   }
 }
 
@@ -917,6 +934,11 @@ ul {
 .menu-footer .social-icons img {
   width: 35px;
   height: 35px;
+  transition: transform 0.3s ease;
+}
+
+.menu-footer .social-icons img:hover {
+  transform: scale(1.2);
 }
 
 .menu-toggle {
@@ -990,15 +1012,20 @@ ul {
 
 .about-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
   gap: 3rem;
-  flex-wrap: wrap;
 }
 
-.about-avatar img {
-  width: 100px;
-  height: auto;
+.about-image {
+  flex-shrink: 0;
+  margin-right: 3rem;
+}
+
+.about-image img {
+  width: 400px;
+  height: 400px;
+  border-radius: 20px;
+  object-fit: cover;
 }
 
 .about-text {
@@ -1006,5 +1033,72 @@ ul {
   font-size: 1.1rem;
   line-height: 1.7;
   text-align: left;
+}
+
+/* Currently Section */
+#currently {
+  margin-top: 1rem;
+  padding: 2rem 0;
+}
+
+#currently h3 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel {
+  display: flex;
+  animation: scroll 20s linear infinite;
+  gap: 2rem;
+}
+
+.carousel-item {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.carousel-item img {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: filter 0.3s ease;
+}
+
+.carousel-item:hover img {
+  filter: grayscale(50%) brightness(0.7);
+}
+
+.caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.carousel-item:hover .caption {
+  opacity: 1;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
