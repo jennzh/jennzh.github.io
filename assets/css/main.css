@@ -576,8 +576,27 @@ ul {
 
 .project-buttons a:hover {
   background: #e9ecef;
-  border-color: #adb5bd;
   color: #333;
+}
+
+/* Specific button border colors */
+.project-buttons a[href*="github"] {
+  border-color: #364894;
+}
+
+.project-buttons a.live,
+.project-buttons a[href*="psyche.ssl.berkeley.edu"],
+.project-buttons a[href*="vojo-silk.myshopify.com"],
+.project-buttons a[href*="devpost.com"] {
+  border-color: #3D9436;
+}
+
+.project-buttons a[href*="figma.com"] {
+  border-color: #F24E1E;
+}
+
+.project-buttons a[href="oof-sleep-tracker.html"] {
+  border-color: #9B59B6;
 }
 
 .projects-header {
