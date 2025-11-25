@@ -595,7 +595,8 @@ ul {
   border-color: #F24E1E;
 }
 
-.project-buttons a[href="oof-sleep-tracker.html"] {
+.project-buttons a[href="oof-sleep-tracker.html"],
+.project-buttons a[href="vojo-silk.html"] {
   border-color: #9B59B6;
 }
 
